@@ -1,0 +1,75 @@
+# ===========================
+# Dependencies
+# ===========================
+node_modules/
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===========================
+# Environment variables
+# ===========================
+.env
+.env.*
+!.env.example
+
+# ===========================
+# Build
+# ===========================
+dist/
+build/
+
+# ===========================
+# Expo
+# ===========================
+.expo/
+.expo-shared/
+
+# ===========================
+# React Native
+# ===========================
+android/app/build/
+android/.gradle/
+android/local.properties
+
+ios/build/
+ios/Pods/
+
+# Metro
+.metro-health-check*
+
+# ===========================
+# TypeScript
+# ===========================
+*.tsbuildinfo
+
+# ===========================
+# IDEs
+# ===========================
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# ===========================
+# OS
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Coverage
+# ===========================
+coverage/
+
+# ===========================
+# Temporary files
+# ===========================
+*.tmp
+*.temp
