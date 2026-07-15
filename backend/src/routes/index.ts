@@ -8,7 +8,7 @@ router.get('/', async (_, res) => {
     const products = await findAll();
 
     const values = products.map(product => ({
-      code: product._id,
+      id: product._id,
       name: product.name,
       quantity: product.quantity
     }));
@@ -49,11 +49,11 @@ router.post('/new', async (req, res) => {
 
 });
 
-router.delete('/remove/:code', async (req, res) => {
+router.delete('/remove/:id', async (req, res) => {
 
   try {
 
-    await deleteOne(req.params.code);
+    await deleteOne(req.params.id);
 
     res.json({
       resultado: 'Removido'
