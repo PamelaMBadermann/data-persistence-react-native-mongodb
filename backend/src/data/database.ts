@@ -2,8 +2,8 @@ import { Db, MongoClient, ObjectId } from 'mongodb';
 import { Product } from '../models/Product';
 
 const uri = 'mongodb://localhost:27017';
-const databaseName = 'loja';
-const collectionName = 'produtos';
+const databaseName = 'store';
+const collectionName = 'products';
 
 let db: Db;
 

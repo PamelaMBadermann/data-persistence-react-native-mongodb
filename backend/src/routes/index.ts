@@ -8,16 +8,16 @@ router.get('/', async (_, res) => {
     const products = await findAll();
 
     const values = products.map(product => ({
-      codigo: product._id,
-      nome: product.nome,
-      quantidade: product.quantidade
+      code: product._id,
+      name: product.name,
+      quantity: product.quantity
     }));
 
     res.json(values);
 
   } catch (error) {
     res.status(500).json({
-      resultado: 'Erro ao listar',
+      resultado: 'Error listing products',
       mensagem: error
     });
   }
@@ -25,23 +25,23 @@ router.get('/', async (_, res) => {
 
 router.post('/new', async (req, res) => {
 
-  const { nome, quantidade } = req.body;
+  const { name, quantity } = req.body;
 
   try {
 
     await insert({
-      nome,
-      quantidade
+      name,
+      quantity
     });
 
     res.json({
-      resultado: 'Inserido'
+      resultado: 'Inserted'
     });
 
   } catch (error) {
 
     res.status(500).json({
-      resultado: 'Erro ao inserir',
+      resultado: 'Error inserting product',
       mensagem: error
     });
 
@@ -49,11 +49,11 @@ router.post('/new', async (req, res) => {
 
 });
 
-router.delete('/remove/:codigo', async (req, res) => {
+router.delete('/remove/:code', async (req, res) => {
 
   try {
 
-    await deleteOne(req.params.codigo);
+    await deleteOne(req.params.code);
 
     res.json({
       resultado: 'Removido'
